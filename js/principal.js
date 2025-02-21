@@ -4,25 +4,17 @@ Ej. Costos varios artículos: 10, 20, 14, 6 y 4
 La salida requerida presenta el siguiente formato: 
 La ganancia será de Bs.27
 **/
+import Cl_vBodega from "./Cl_vBodega.js";
+import Cl_mBodega from "./Cl_mBodega.js";
+import Cl_controlador from "./Cl_controlador.js";
 
-import Cl_bodega from "./Cl_bodega.js";
-import Cl_articulos from "./Cl_articulos.js";
+export default class Cl_principal {
+  constructor() {
+    let vista = new Cl_vBodega();
+    let modelo = new Cl_mBodega();
+    let controlador = new Cl_controlador(modelo, vista);
+    vista.controlador = controlador;
+  }
+}
 
-let arti1 = new Cl_articulos(10);
-let arti2 = new Cl_articulos(20);
-let arti3 = new Cl_articulos(14);
-let arti4 = new Cl_articulos(6);
-let arti5 = new Cl_articulos(4);
-
-let bodega = new Cl_bodega();
-
-bodega.procesarArticulo(arti1); 
-bodega.procesarArticulo(arti2); 
-bodega.procesarArticulo(arti3); 
-bodega.procesarArticulo(arti4); 
-bodega.procesarArticulo(arti5);
-
-let salida = document.getElementById("Salida");
-salida.innerHTML=`Resultados
-<p>La ganancia sera de Bs. ${bodega.totalGanancia()}</p>`
 

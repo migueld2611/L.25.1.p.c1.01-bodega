@@ -1,4 +1,4 @@
-export default class Cl_bodega{
+export default class Cl_mBodega{
     constructor(){
         this.acGanancia = 0;
     }

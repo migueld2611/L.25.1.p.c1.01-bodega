@@ -1,4 +1,4 @@
-export default class Cl_articulos {
+export default class Cl_mArticulos {
     constructor(costo) {
         this.costo = +costo;
     }
